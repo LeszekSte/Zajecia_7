@@ -1,8 +1,11 @@
 package Cwiczenie11;
 
+
 public class Expenses {
     private String name;
     private double value;
+
+    public Expenses(){}
 
     public Expenses(String name, double value) {
         this.name = name;
@@ -24,11 +27,9 @@ public class Expenses {
     public void setValu(double value) {
         this.value = value;
     }
-
-
-
     @Override
     public String toString() {
+
         return "Expenses{" +
                 "name='" + name + '\'' +
                 ", valu=" + value +

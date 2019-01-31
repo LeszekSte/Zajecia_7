@@ -19,20 +19,23 @@ public class Main4 {
         do {
             System.out.println("Podaj liczbe z zakresu od " + MIN + " do " + MAX);
             liczba = scanner.nextInt();
-        } while (liczba < MIN || liczba > MAX);
+        } while (!(MIN<=liczba  && liczba <+ MAX));
 
         boolean div3 = liczba % 3 == 0;
         boolean div5 = liczba % 5 == 0;
         String text3 = "";
         String text5 = "";
+        boolean druk = false;
 
         if (div3) {
             text3 = "Fizz";
+            druk =true;
         }
         if (div5) {
             text5 = "Buzz";
+            druk =true;
         }
-        if (div3 || div5) {
+        if (druk) {
             System.out.println(liczba + " - " + text3 + text5);
         }
     }
