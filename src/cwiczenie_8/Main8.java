@@ -14,21 +14,16 @@ public class Main8 {
         for (int i = MIN; i <= (MAX); i++) {
             int[] a = new int[5];
             a[0] = (int) (i / rzadWielkosci[0]);
-            int rob1 = i;
+            int wartRobocza = i;
             double sumaPower = Math.pow(a[0], 5);
 
-
             for (int x = 1; x < rzadWielkosci.length; x++) {
-                int rob = a[x - 1] * rzadWielkosci[x - 1];
-                rob1 -= rob;
-                a[x] = (int) (rob1 / rzadWielkosci[x]);
-
-//                System.out.println(rzadWielkosci[x] + "  -  " + a[x]);
+                wartRobocza -= a[x - 1] * rzadWielkosci[x - 1];
+                a[x] = (int) (wartRobocza / rzadWielkosci[x]);
                 sumaPower += Math.pow(a[x], 5);
             }
 
             if (sumaPower == i) {
-
                 System.out.println(++ileLiczb+ ". - "+ (int)sumaPower);
             }
         }
